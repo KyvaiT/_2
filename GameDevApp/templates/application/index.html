@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Главная{% endblock %}
+
+{% block content %}
+<main>
+    <h1 class="title">
+        <span id="typed"></span>
+    </h1>
+
+    <div id="typed-strings">
+        <span>Разработчик Игр</span>
+        <span>Геймдев</span>
+        <span>За что мне это?</span>
+    </div>
+
+    <section class="image-section">
+        <div class="animated-lines">
+            <div class="line" style="width: 20px; height: 10%; left: -20px; animation-delay: 0s;"></div>
+            <div class="line" style="width: 30px; height: 100%; left: -30px; animation-delay: 1s;"></div>
+            <div class="line" style="width: 15px; height: 80%; left: -15px; animation-delay: 2s;"></div>
+            <div class="line" style="width: 25px; height: 50%; left: -25px; animation-delay: 3s;"></div>
+            <div class="line" style="width: 40px; height: 30%; left: -40px; animation-delay: 4s;"></div>
+        </div>
+        <div class="floating-images">
+            <div class="image-block"></div>
+            <div class="image-block"></div>
+            <div class="image-block"></div>
+            <div class="image-block"></div>
+            <div class="image-block"></div>
+            <div class="image-block"></div>
+            <div class="image-block"></div>
+            <div class="image-block"></div>
+            <div class="image-block"></div>
+            <div class="image-block"></div>
+        </div>
+    </section>
+
+    <section class="description">
+        <p>
+            Разработчик игр (Game Developer) — это специалист, занимающийся созданием видеоигр.
+            Эта профессия охватывает широкий спектр навыков и знаний: от программирования и
+            работы с графикой до проектирования уровней и игровых механик. Современные
+            геймдев-компании разрабатывают игры как для мобильных устройств, так и для
+            персональных компьютеров, игровых приставок и даже облачных платформ.
+            <br><br>
+            Работа разработчика игр требует навыков работы с популярными игровыми движками,
+            такими как Unity и Unreal Engine. Также полезны знания в области 3D-моделирования,
+            работы с аудиофайлами и создания анимаций. Программирование в геймдеве, как правило,
+            ведётся на языках C++, C# или Python. Важно также понимать основы физики и
+            математики, чтобы создавать реалистичные игровые миры.
+            <br><br>
+            В этой области перспективы карьерного роста огромны. Многие разработчики начинают
+            с создания простых инди-игр, а затем переходят в крупные студии, работающие над
+            AAA-проектами. Геймдев-сфера продолжает расти, предоставляя уникальные возможности
+            для творчества и профессионального роста.
+        </p>
+    </section>
+</main>
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static 'js/script.js' %}"></script>
+<script src="{% static 'js/typed.js' %}"></script>
+{% endblock %}

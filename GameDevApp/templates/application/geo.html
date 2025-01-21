@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+{% load static %} <!-- Подключение библиотеки static -->
+{% block title %}География{% endblock %}
+
+{% block content %}
+<h1>География</h1>
+
+<section>
+    <h2>Уровень зарплат по городам для выбранной профессии</h2>
+    <canvas id="salaryChart" width="400" height="200"></canvas>
+</section>
+
+<section>
+    <h2>Доля вакансий по городам для выбранной профессии</h2>
+    <canvas id="vacancyChart" width="400" height="200"></canvas>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    // График уровня зарплат
+    const salaryCtx = document.getElementById('salaryChart').getContext('2d');
+    const salaryChart = new Chart(salaryCtx, {
+        type: 'bar',
+        data: {
+            labels: ["Текели", "Салехард", "Нарьян-Мар", "Магас", "Горно-Алтайск", "Анадырь", "Нидерланды", "Великобритания", "Биробиджан", "Норвегия"],
+            datasets: [{
+                label: 'Уровень зарплат по городам для Разработчик игр (GameDev)',
+                data: [5252817.5, 550000.0, 550000.0, 550000.0, 550000.0, 550000.0, 370200.725, 344303.375, 335000.0, 300000.0],
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+    // График доли вакансий
+    const vacancyCtx = document.getElementById('vacancyChart').getContext('2d');
+    const vacancyChart = new Chart(vacancyCtx, {
+        type: 'pie',
+        data: {
+            labels: ["Москва", "Санкт-Петербург", "Минск", "Новосибирск", "Киев", "Казань", "Ростов-на-Дону", "Екатеринбург", "Краснодар", "Алматы"],
+            datasets: [{
+                label: 'Доля вакансий по городам для Разработчик игр (GameDev)',
+                data: [31.28994803233043, 15.460663517794135, 8.949486523351633, 4.396397208851413, 2.4135093395258655, 1.7709589782321973, 1.6447034686446698, 1.5725574631660824, 1.5353571790911857, 1.5252116470707593],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)',
+                    'rgba(201, 203, 207, 0.2)',
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(201, 203, 207, 1)',
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true
+        }
+    });
+</script>
+
+{% endblock %}

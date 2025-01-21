@@ -1,0 +1,35 @@
+
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>ТОП-20 навыков</title>
+            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        </head>
+        <body>
+            <canvas id="myChart" width="400" height="200"></canvas>
+            <script>
+                const ctx = document.getElementById('myChart').getContext('2d');
+                const myChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ["", "\u0413\u0440\u0430\u043c\u043e\u0442\u043d\u0430\u044f \u0440\u0435\u0447\u044c\n\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u041f\u041a", "1\u0421 \u043f\u0440\u043e\u0433\u0440\u0430\u043c\u043c\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u0435", " \u043e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0435\u043d\u043d\u043e\u0441\u0442\u044c", "\u0420\u0430\u0431\u043e\u0442\u0430 \u0432 \u043a\u043e\u043c\u0430\u043d\u0434\u0435\n\u0413\u0440\u0430\u043c\u043e\u0442\u043d\u0430\u044f \u0440\u0435\u0447\u044c\n\u041a\u043b\u0438\u0435\u043d\u0442\u043e\u043e\u0440\u0438\u0435\u043d\u0442\u0438\u0440\u043e\u0432\u0430\u043d\u043d\u043e\u0441\u0442\u044c\n\u0414\u0435\u043b\u043e\u0432\u043e\u0435 \u043e\u0431\u0449\u0435\u043d\u0438\u0435\n\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u041f\u041a", "\u0410\u043d\u0433\u043b\u0438\u0439\u0441\u043a\u0438\u0439 \u044f\u0437\u044b\u043a", "Java", "\u0420\u0430\u0431\u043e\u0442\u0430 \u0432 \u043a\u043e\u043c\u0430\u043d\u0434\u0435", "SQL", "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u041f\u041a", "Python", "C++", "\u0427\u0442\u0435\u043d\u0438\u0435 \u0447\u0435\u0440\u0442\u0435\u0436\u0435\u0439", ".NET Framework\n\u041e\u041e\u041f\nC#\nASP.NET\nMVC\nJavaScript\nHTML5\njQuery", "\u041e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0435\u043d\u043d\u043e\u0441\u0442\u044c", "\u0418\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u043e\u043d\u043d\u0430\u044f \u0431\u0435\u0437\u043e\u043f\u0430\u0441\u043d\u043e\u0441\u0442\u044c", "Linux", "Java\nSpring Framework", "\u0413\u0440\u0430\u043c\u043e\u0442\u043d\u0430\u044f \u0440\u0435\u0447\u044c\n\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u041f\u041a\n\u0420\u0430\u0431\u043e\u0442\u0430 \u0432 \u043a\u043e\u043c\u0430\u043d\u0434\u0435\n\u0413\u0440\u0430\u043c\u043e\u0442\u043d\u043e\u0441\u0442\u044c\n\u0420\u0430\u0431\u043e\u0442\u0430 \u0441 \u0431\u043e\u043b\u044c\u0448\u0438\u043c \u043e\u0431\u044a\u0435\u043c\u043e\u043c \u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u0438\nMS Excel", "1\u0421 \u043f\u0440\u043e\u0433\u0440\u0430\u043c\u043c\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u0435\n1\u0421: \u041f\u0440\u0435\u0434\u043f\u0440\u0438\u044f\u0442\u0438\u0435 8"],
+                        datasets: [{
+                            label: 'ТОП-20 навыков',
+                            data: [3522289, 7846, 7048, 6344, 5852, 4405, 3874, 3649, 3182, 2867, 2838, 2247, 2130, 2125, 2087, 1885, 1812, 1796, 1777, 1749],
+                            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                            borderColor: 'rgba(75, 192, 192, 1)',
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            </script>
+        </body>
+        </html>
+        

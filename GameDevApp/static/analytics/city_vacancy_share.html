@@ -1,0 +1,35 @@
+
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>Доля вакансий по городам</title>
+            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        </head>
+        <body>
+            <canvas id="myChart" width="400" height="200"></canvas>
+            <script>
+                const ctx = document.getElementById('myChart').getContext('2d');
+                const myChart = new Chart(ctx, {
+                    type: 'pie',
+                    data: {
+                        labels: ["\u041c\u043e\u0441\u043a\u0432\u0430", "\u0421\u0430\u043d\u043a\u0442-\u041f\u0435\u0442\u0435\u0440\u0431\u0443\u0440\u0433", "\u041c\u0438\u043d\u0441\u043a", "\u041d\u043e\u0432\u043e\u0441\u0438\u0431\u0438\u0440\u0441\u043a", "\u0415\u043a\u0430\u0442\u0435\u0440\u0438\u043d\u0431\u0443\u0440\u0433", "\u041d\u0438\u0436\u043d\u0438\u0439 \u041d\u043e\u0432\u0433\u043e\u0440\u043e\u0434", "\u041a\u0438\u0435\u0432", "\u0410\u043b\u043c\u0430\u0442\u044b", "\u041a\u0430\u0437\u0430\u043d\u044c", "\u0412\u043e\u0440\u043e\u043d\u0435\u0436"],
+                        datasets: [{
+                            label: 'Доля вакансий по городам',
+                            data: [33.82872125882867, 10.109158680216229, 3.5131609048633647, 2.3798547385244273, 2.224141007691113, 2.070784384781817, 2.0320728638456376, 2.020142716377446, 1.9911199212639188, 1.620316477167722],
+                            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                            borderColor: 'rgba(75, 192, 192, 1)',
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            </script>
+        </body>
+        </html>
+        

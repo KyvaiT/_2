@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load static %} <!-- Подключение библиотеки static -->
+{% block title %}Востребованность{% endblock %}
+
+{% block content %}
+<h1>Востребованность</h1>
+<section>
+    <h2>Динамика уровня зарплат по годам для выбранной профессии</h2>
+    <img src="{% static 'analytics/profession_salary_trends.png' %}" alt="График зарплат для профессии">
+    <canvas id="salaryChart" width="400" height="200"></canvas>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const salaryCtx = document.getElementById('salaryChart').getContext('2d');
+        const salaryChart = new Chart(salaryCtx, {
+            type: 'line',
+            data: {
+                labels: [2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024],
+                datasets: [{
+                    label: 'Динамика уровня зарплат для Разработчик игр (GameDev)',
+                    data: [42145.301, 28409.756842105264, 23646.62517964072, 35381.622976190476, 46520.50251785714, 44230.75306818182, 47008.58671717172, 54542.64724144553, 52165.05951005431, 61872.18376122186, 58144.76314426356, 67012.8618349259, 71620.20636621366, 69827.6345570957, 79894.20970976877, 87155.97589224891, 109354.17741662893, 98144.6028653839, 102859.87455687937, 82835.72080872423, 82912.27175316587],
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</section>
+<section>
+    <h2>Динамика количества вакансий по годам для выбранной профессии</h2>
+    <img src="{% static 'analytics/profession_vacancy_count.png' %}" alt="График вакансий для профессии">
+    <canvas id="vacancyChart" width="400" height="200"></canvas>
+    <script>
+        const vacancyCtx = document.getElementById('vacancyChart').getContext('2d');
+        const vacancyChart = new Chart(vacancyCtx, {
+            type: 'bar',
+            data: {
+                labels: [2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024],
+                datasets: [{
+                    label: 'Количество вакансий для Разработчик игр (GameDev) по годам',
+                    data: [16, 63, 186, 113, 113, 122, 285, 526, 753, 1357, 1594, 2210, 3125, 3648, 5055, 6838, 9532, 16622, 16169, 12021, 8361],
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</section>
+{% endblock %}

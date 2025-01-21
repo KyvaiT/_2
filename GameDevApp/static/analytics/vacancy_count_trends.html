@@ -1,0 +1,35 @@
+
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>Динамика количества вакансий по годам</title>
+            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        </head>
+        <body>
+            <canvas id="myChart" width="400" height="200"></canvas>
+            <script>
+                const ctx = document.getElementById('myChart').getContext('2d');
+                const myChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: [2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024],
+                        datasets: [{
+                            label: 'Динамика количества вакансий по годам',
+                            data: [1983, 7833, 16020, 33321, 53562, 75070, 52889, 93494, 142458, 173898, 234017, 259567, 284762, 332452, 391464, 517666, 535958, 611882, 943156, 887523, 709542, 556737],
+                            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                            borderColor: 'rgba(75, 192, 192, 1)',
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            </script>
+        </body>
+        </html>
+        

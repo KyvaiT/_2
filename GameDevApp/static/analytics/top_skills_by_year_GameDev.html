@@ -1,0 +1,35 @@
+
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>Самые популярные навыки по годам для Разработчик игр (GameDev)</title>
+            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        </head>
+        <body>
+            <canvas id="myChart" width="400" height="200"></canvas>
+            <script>
+                const ctx = document.getElementById('myChart').getContext('2d');
+                const myChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: [" (2007)", " (2006)", " (2009)", " (2010)", " (2005)", " (2008)", " (2004)", " (2011)", " (2012)", " (2013)", " (2014)", " (2015)", " (2016)", " (2017)", " (2018)", " (2019)", " (2020)", " (2021)", " (2022)", " (2023)", " (2024)"],
+                        datasets: [{
+                            label: 'Самые популярные навыки по годам для Разработчик игр (GameDev)',
+                            data: ["113", "186", "122", "285", "63", "113", "16", "526", "753", "1357", "1594", "1681", "1664", "1699", "2025", "2210", "1296", "1442", "1155", "1336", "1395"],
+                            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                            borderColor: 'rgba(75, 192, 192, 1)',
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            </script>
+        </body>
+        </html>
+        

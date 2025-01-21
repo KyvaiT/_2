@@ -1,0 +1,143 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Общая статистика{% endblock %}
+
+{% block content %}
+<h1>Общая статистика</h1>
+
+<section>
+    <h2>Динамика уровня зарплат по годам</h2>
+    <canvas id="salaryTrendChart" width="400" height="200"></canvas>
+</section>
+
+<section>
+    <h2>Динамика количества вакансий по годам</h2>
+    <canvas id="vacancyTrendChart" width="400" height="200"></canvas>
+</section>
+
+<section>
+    <h2>Уровень зарплат по городам</h2>
+    <canvas id="salaryCityChart" width="400" height="200"></canvas>
+</section>
+
+<section>
+    <h2>Доля вакансий по городам</h2>
+    <canvas id="vacancyShareChart" width="400" height="200"></canvas>
+</section>
+
+<section>
+    <h2>ТОП-20 навыков</h2>
+    <canvas id="topSkillsChart" width="400" height="200"></canvas>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    // Динамика уровня зарплат по годам
+    const salaryTrendCtx = document.getElementById('salaryTrendChart').getContext('2d');
+    const salaryTrendChart = new Chart(salaryTrendCtx, {
+        type: 'line',
+        data: {
+            labels: [2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024],
+            datasets: [{
+                label: 'Динамика уровня зарплат по годам',
+                data: [41304.95, 42967.52, 44939.21, 41317.92, 44449.49, 48411.22, 44811.75, 44657.90, 46448.52, 47462.12, 49086.20, 48552.18, 51447.82, 54877.96, 58683.67, 63849.54, 68078.28, 71254.22, 81578.79, 89943.38, 97460.92, 108773.14],
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: { responsive: true }
+    });
+
+    // Динамика количества вакансий по годам
+    const vacancyTrendCtx = document.getElementById('vacancyTrendChart').getContext('2d');
+    const vacancyTrendChart = new Chart(vacancyTrendCtx, {
+        type: 'bar',
+        data: {
+            labels: [2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024],
+            datasets: [{
+                label: 'Динамика количества вакансий по годам',
+                data: [1983, 7833, 16020, 33321, 53562, 75070, 52889, 93494, 142458, 173898, 234017, 259567, 284762, 332452, 391464, 517666, 535958, 611882, 943156, 887523, 709542, 556737],
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: { responsive: true }
+    });
+
+    // Уровень зарплат по городам
+    const salaryCityCtx = document.getElementById('salaryCityChart').getContext('2d');
+    const salaryCityChart = new Chart(salaryCityCtx, {
+        type: 'bar',
+        data: {
+            labels: ["Бар", "Шахрисабз", "Айет", "Шри-Ланка", "Шотландия", "Дубляны", "Добромиль", "Золочев", "Винники", "Глиняны"],
+            datasets: [{
+                label: 'Средняя зарплата по городам',
+                data: [1245705.5, 674928.44, 567361.15, 500389.77, 419206.17, 409405.15, 409405.15, 409405.15, 409405.15, 409405.15],
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: { responsive: true }
+    });
+
+    // Доля вакансий по городам
+    const vacancyShareCtx = document.getElementById('vacancyShareChart').getContext('2d');
+    const vacancyShareChart = new Chart(vacancyShareCtx, {
+        type: 'pie',
+        data: {
+            labels: ["Москва", "Санкт-Петербург", "Минск", "Новосибирск", "Екатеринбург", "Нижний Новгород", "Киев", "Алматы", "Казань", "Воронеж"],
+            datasets: [{
+                label: 'Доля вакансий по городам',
+                data: [33.83, 10.11, 3.51, 2.38, 2.22, 2.07, 2.03, 2.02, 1.99, 1.62],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)',
+                    'rgba(201, 203, 207, 0.2)',
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(201, 203, 207, 1)',
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: { responsive: true }
+    });
+
+    // ТОП-20 навыков
+    const topSkillsCtx = document.getElementById('topSkillsChart').getContext('2d');
+    const topSkillsChart = new Chart(topSkillsCtx, {
+        type: 'bar',
+        data: {
+            labels: ["Навык 1", "Навык 2", "Навык 3", "Навык 4", "Навык 5", "Навык 6", "Навык 7", "Навык 8", "Навык 9", "Навык 10"],
+            datasets: [{
+                label: 'ТОП-20 навыков',
+                data: [3522289, 7846, 7048, 6344, 5852, 4405, 3874, 3649, 3182, 2867],
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: { responsive: true }
+    });
+</script>
+
+{% endblock %}

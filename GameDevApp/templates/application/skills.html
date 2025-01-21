@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load static %} <!-- Подключение библиотеки static -->
+{% block title %}Навыки{% endblock %}
+
+{% block content %}
+<h1>Навыки</h1>
+<section>
+    <h2>ТОП-20 навыков по годам для выбранной профессии</h2>
+    <img src="{% static 'analytics/profession_top_skills.png' %}" alt="График ТОП-20 навыков">
+</section>
+{% endblock %}
